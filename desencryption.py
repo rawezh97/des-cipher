@@ -65,6 +65,7 @@ def encrypt(value,key):
     row_S1 = int(row_part2 , 2)                   # convert binary to number 
     regh_data = S1[row_S1][col_S1] # row_S1=3 col_S1=3  result = 3
 
+    #in here i forget to create an if/else statment we shuld make out put in binary if 1 to bin must be 01 not just 1
 
     Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
     # print("Emurate_f : " , Emurate_f)
@@ -98,7 +99,6 @@ def encrypt(value,key):
     # print("L1 : " , L1)
 
 
-
     # now we nedd ip reverse 
     # ip = 26314857
 
@@ -108,7 +108,6 @@ def encrypt(value,key):
         ip_inverse[int(i)-1] =count
         count +=1
     # print("ip_inverse : " , ip_inverse)
-
 
     # Concatenate R1+L1
     Concatenate = R1+L1
