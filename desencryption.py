@@ -1,6 +1,7 @@
 def decimalToBinary(n):  
     return bin(n).replace("0b", "")  
 
+
 def encrypt(value,key):
 
     plain_bin = value #11011001
