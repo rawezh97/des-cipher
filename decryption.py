@@ -64,7 +64,14 @@ def decryption(value,key):
     row_S1 = int(row_part2 , 2)                   # convert binary to number 
     regh_data = S1[row_S1][col_S1] # row_S1=3 col_S1=3  result = 3
 
+########################################################################################
+#Add this part for fix the bin bug
 
+    
+    
+    
+########################################################################################
+    
     Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
     # print("Emurate_f : " , Emurate_f)
 
