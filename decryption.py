@@ -67,12 +67,19 @@ def decryption(value,key):
 ########################################################################################
 #Add this part for fix the bin bug
 
-    
+if (len(decimalToBinary(int(lef_data))) <2):
+    left = "0" + decimalToBinary(int(lef_data)
+
+if (len(decimalToBinary(int(regh_data))) <2):
+    right = "0" + decimalToBinary(int(regh_data))
+                      
+Emurate_f = left + right
     
     
 ########################################################################################
     
-    Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
+    
+    #Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
     # print("Emurate_f : " , Emurate_f)
 
 
