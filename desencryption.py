@@ -134,6 +134,11 @@ def encrypt(value,key):
     return ''.join(message)
 
 inp = input("Enter the binary :")
+inp = stringToBinary(inp)
+if len(inp)<8:
+    inp = "0"+inp
+# print(inp)
+
 list_key = ["10100010","10001111","00101111","10001110","10000011","10101001","10100001","11100111","10101110","11101011","00101001","01011001","10101010","10100010","11100111","11100110"]
 
 c1 = encrypt(inp , list_key[0])
