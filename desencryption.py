@@ -67,8 +67,17 @@ def encrypt(value,key):
     regh_data = S1[row_S1][col_S1] # row_S1=3 col_S1=3  result = 3
 
     #in here i forget to create an if/else statment we shuld make out put in binary if 1 to bin must be 01 not just 1
+    if len(decimalToBinary(int(lef_data)))<2:
+        left = "0" + decimalToBinary(int(lef_data))
+    else :
+        left = decimalToBinary(int(lef_data))
+    if len(decimalToBinary(int(regh_data)))<2:
+        right = "0" + decimalToBinary(int(regh_data))
+    else : 
+        right =decimalToBinary(int(regh_data))
 
-    Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
+    Emurate_f = left + right
+    # Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
     # print("Emurate_f : " , Emurate_f)
 
 
@@ -122,7 +131,7 @@ def encrypt(value,key):
     # print(''.join(message))
     return ''.join(message)
 
-inp = "11011001"
+inp = input("Enter the binary :")
 list_key = ["10100010","10001111","00101111","10001110","10000011","10101001","10100001","11100111","10101110","11101011","00101001","01011001","10101010","10100010","11100111","11100110"]
 
 c1 = encrypt(inp , list_key[0])
@@ -141,4 +150,4 @@ c13 = encrypt(c12 , list_key[12])
 c14 = encrypt(c13 , list_key[13])
 c15 = encrypt(c14 , list_key[14])
 c16 = encrypt(c15 , list_key[15])
-print("the Enter word is :11011001\nthe Cipher word is :",c16)
+print(f"the Enter word is :{inp}\nthe Cipher word is :",c16)
