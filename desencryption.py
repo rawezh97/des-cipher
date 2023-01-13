@@ -77,6 +77,8 @@ def encrypt(value,key):
         right =decimalToBinary(int(regh_data))
 
     Emurate_f = left + right
+    
+    # its old version an make error for those binary that be one digit
     # Emurate_f = decimalToBinary(int(lef_data)) + decimalToBinary(int(regh_data)) # 1111
     # print("Emurate_f : " , Emurate_f)
 
