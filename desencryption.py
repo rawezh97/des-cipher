@@ -1,6 +1,8 @@
 def decimalToBinary(n):  
     return bin(n).replace("0b", "")  
 
+def stringToBinary(n):
+    return ''.join(format(ord(n), 'b'))
 
 def encrypt(value,key):
 
