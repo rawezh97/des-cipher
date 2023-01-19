@@ -1,6 +1,9 @@
 def decimalToBinary(n):  
     return bin(n).replace("0b", "")  
 
+def BinaryToDecimal(binary):
+    return int(binary,2)
+
 def decryption(value,key):
     plain_bin = value #11011001
     k1 = key #10100010
@@ -66,8 +69,6 @@ def decryption(value,key):
 
 ########################################################################################
 #Add this part for fix the bin bug
-    print("abas")
-    print(len(decimalToBinary(int(regh_data))))
 
     if len(decimalToBinary(int(lef_data)))<2:
         left = "0" + decimalToBinary(int(lef_data))
@@ -140,22 +141,30 @@ def decryption(value,key):
     # print(''.join(message))
     return ''.join(message)
 inp = input("Enter :")
+
 list_key = ["10100010","10001111","00101111","10001110","10000011","10101001","10100001","11100111","10101110","11101011","00101001","01011001","10101010","10100010","11100111","11100110"]
 
-d1 = decryption(inp , list_key[15])
-d2 = decryption(d1 , list_key[14])
-d3 = decryption(d2 , list_key[13])
-d4 = decryption(d3 , list_key[12])
-d5 = decryption(d4 , list_key[11])
-d6 = decryption(d5 , list_key[10])
-d7 = decryption(d6 , list_key[9])
-d8 = decryption(d7 , list_key[8])
-d9 = decryption(d8 , list_key[7])
-d10 = decryption(d9 , list_key[6])
-d11 = decryption(d10 , list_key[5])
-d12 = decryption(d11 , list_key[4])
-d13 = decryption(d12 , list_key[3])
-d14 = decryption(d13 , list_key[2])
-d15 = decryption(d14 , list_key[1])
-plainText = decryption(d15 , list_key[0])
-print("the plain text is :" , plainText)
+word = []
+
+for i in inp.split(' '):
+    
+    d1 = decryption(i , list_key[15])
+    d2 = decryption(d1 , list_key[14])
+    d3 = decryption(d2 , list_key[13])
+    d4 = decryption(d3 , list_key[12])
+    d5 = decryption(d4 , list_key[11])
+    d6 = decryption(d5 , list_key[10])
+    d7 = decryption(d6 , list_key[9])
+    d8 = decryption(d7 , list_key[8])
+    d9 = decryption(d8 , list_key[7])
+    d10 = decryption(d9 , list_key[6])
+    d11 = decryption(d10 , list_key[5])
+    d12 = decryption(d11 , list_key[4])
+    d13 = decryption(d12 , list_key[3])
+    d14 = decryption(d13 , list_key[2])
+    d15 = decryption(d14 , list_key[1])
+    plainText = decryption(d15 , list_key[0])
+    deciml = BinaryToDecimal(plainText)
+    word.append(chr(deciml))
+    # print(chr(deciml))
+print(''.join(word))
