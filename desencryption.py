@@ -135,28 +135,40 @@ def encrypt(value,key):
     # print(''.join(message))
     return ''.join(message)
 
-inp = input("Enter the binary :")
-inp = stringToBinary(inp)
-if len(inp)<8:
-    inp = "0"+inp
+inp = input("Enter the word to be cipher :")
+# inp = stringToBinary(inp)
+# if len(inp)<8:
+#     inp = "0"+inp
 # print(inp)
 
 list_key = ["10100010","10001111","00101111","10001110","10000011","10101001","10100001","11100111","10101110","11101011","00101001","01011001","10101010","10100010","11100111","11100110"]
+cipher_text =[]
+for i in inp :
+    if i == " ":
+        continue
+    else :
+        binary_input = stringToBinary(i)
 
-c1 = encrypt(inp , list_key[0])
-c2 = encrypt(c1 , list_key[1])
-c3 = encrypt(c2 , list_key[2])
-c4 = encrypt(c3 , list_key[3])
-c5 = encrypt(c4 , list_key[4])
-c6 = encrypt(c5 , list_key[5])
-c7 = encrypt(c6 , list_key[6])
-c8 = encrypt(c7 , list_key[7])
-c9 = encrypt(c8 , list_key[8])
-c10 = encrypt(c9 , list_key[9])
-c11 = encrypt(c10 , list_key[10])
-c12 = encrypt(c11 , list_key[11])
-c13 = encrypt(c12 , list_key[12])
-c14 = encrypt(c13 , list_key[13])
-c15 = encrypt(c14 , list_key[14])
-c16 = encrypt(c15 , list_key[15])
-print(f"the Enter word is :{inp}\nthe Cipher word is :",c16)
+        if len(binary_input)<8:
+            binary_input = "0"+ binary_input
+        c1 = encrypt(binary_input , list_key[0])
+        c2 = encrypt(c1 , list_key[1])
+        c3 = encrypt(c2 , list_key[2])
+        c4 = encrypt(c3 , list_key[3])
+        c5 = encrypt(c4 , list_key[4])
+        c6 = encrypt(c5 , list_key[5])
+        c7 = encrypt(c6 , list_key[6])
+        c8 = encrypt(c7 , list_key[7])
+        c9 = encrypt(c8 , list_key[8])
+        c10 = encrypt(c9 , list_key[9])
+        c11 = encrypt(c10 , list_key[10])
+        c12 = encrypt(c11 , list_key[11])
+        c13 = encrypt(c12 , list_key[12])
+        c14 = encrypt(c13 , list_key[13])
+        c15 = encrypt(c14 , list_key[14])
+        c16 = encrypt(c15 , list_key[15])
+
+        cipher_text.append(c16)
+        # print(f"the Enter word is :{inp}\nthe Cipher word is :",c16)
+
+print(' '.join(cipher_text))
