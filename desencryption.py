@@ -2,7 +2,13 @@ def decimalToBinary(n):
     return bin(n).replace("0b", "")  
 
 def stringToBinary(n):
-    return ''.join(format(ord(n), 'b'))
+    binary = ''.join(format(ord(n), 'b'))
+    if len(binary) == 8:
+        return binary
+    elif len(binary) == 7 :
+        return "0" + binary
+    elif len(binary) == 6 :
+        return "00" + binary
 
 def encrypt(value,key):
 
@@ -148,9 +154,6 @@ for i in inp :
         continue
     else :
         binary_input = stringToBinary(i)
-
-        if len(binary_input)<8:
-            binary_input = "0"+ binary_input
         c1 = encrypt(binary_input , list_key[0])
         c2 = encrypt(c1 , list_key[1])
         c3 = encrypt(c2 , list_key[2])
